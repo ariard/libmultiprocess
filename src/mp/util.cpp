@@ -6,6 +6,7 @@
 #include <mp/util.h>
 
 #include <errno.h>
+#include <iostream>
 #include <kj/array.h>
 #include <pthread.h>
 #include <sstream>
@@ -131,6 +132,7 @@ void ExecProcess(const std::vector<std::string>& args)
     for (const auto& arg : args) {
         argv.push_back(const_cast<char*>(arg.c_str()));
     }
+    printf("Arg[0] %s\n", argv[1]);
     argv.push_back(nullptr);
     if (execvp(argv[0], argv.data()) != 0) {
         perror("execlp failed");
