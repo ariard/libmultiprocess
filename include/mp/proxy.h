@@ -114,6 +114,7 @@ public:
 template <typename Interface, typename Impl>
 struct ProxyServerCustom : public ProxyServerBase<Interface, Impl>
 {
+    //TODO: fault injection
     using ProxyServerBase<Interface, Impl>::ProxyServerBase;
 };
 
